@@ -3,7 +3,7 @@
 :root {
     --clr-bg-main: #1D1D1D;
     --clr-bg-secondary: #3d3d3d;
-    --clr-ul-bg-mobile: rgba(15, 15, 15, 85%);
+    --clr-ul-bg: rgba(15, 15, 15, 85%);
 
     --clr-btn-primary: #0f0f0f;
 }
@@ -77,20 +77,24 @@ h2 {
     border-radius: 5px;
     font-size: 1rem;
     font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    opacity: .7;
 }
 
 /* general page styles */
 
 section {
-    padding: clamp(2rem, 15vh, 5rem) clamp(2rem, 10vw, 10rem);
+    padding: clamp(2rem, 15vh, 7rem) clamp(2rem, 10vw, 10rem);
     margin-bottom: 1rem;
 }
 
 .logo {
     width: 7rem;
-    margin: 2rem;
-
-    position: absolute;
+    margin: 1rem 2rem;
 }
 
 .logo img {
@@ -100,102 +104,144 @@ section {
 /* header */
 
 header {
-    position: relative;
+    position: sticky;
+    top: 0;
+
+    background-color: var(--clr-ul-bg);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav a {
+    font-size: 2rem;
 }
 
 .menu-mobile {
-    position: fixed;
-    top: 2rem;
-    right: 2rem;
-
-    width: 4rem;
-    height: 1rem;
-    border-radius: 999px;
-    background-color: #fff;
-    transition: all .2s;
-
-    z-index: 999;
+    display: none;
 }
-
-.menu-mobile::before,
-.menu-mobile::after {
-    all: inherit;
-    width: 4rem;
-    transition: all .5s;
-    content: "";
-}
-
-.menu-mobile::before {
-    transform: translateY(150%);
-}
-
-.menu-mobile::after {
-    transform: translateY(300%);
-}
-
-#menu-mobile-checkbox:checked+label:after {
-    transform: translateY(100%) rotate(45deg);
-}
-
-#menu-mobile-checkbox:checked+label::before {
-    transform: translateY(100%) rotate(-45deg);
-}
-
-#menu-mobile-checkbox:checked+label {
-    width: 0px;
-}
-
 
 #menu-mobile-checkbox {
     display: none;
 }
 
-nav {
-    opacity: 0;
-    pointer-events: none;
-
-    transition: all .5s;
-}
-
-#menu-mobile-checkbox:checked~nav {
-    pointer-events: auto;
-    opacity: 1;
-    right: 0;
-}
-
-#menu-mobile-checkbox:checked~nav ul {
-    pointer-events: auto;
-    opacity: 1;
-    right: 0;
-}
-
 nav ul {
-    height: 100vh;
-    width: clamp(20rem, 50rem, 65vw);
-    position: fixed;
-    top: 0;
-    right: -100%;
-
     list-style: none;
-    margin: 0;
-    padding: 0;
+    /* position: absolute;
+    top: 2.5rem;
+    right: 0; */
+
+    padding: 1rem 2rem;
 
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 4rem;
-
-    background-color: var(--clr-ul-bg-mobile);
-    font-weight: bold;
-
-    z-index: 9;
-
-    transition: all .5s;
+    gap: 2rem;
 }
 
-nav a {
-    font-size: 2rem;
+@media only screen and (max-width: 1000px) {
+
+    header {
+        all: unset;
+        position: relative;
+    }
+
+    .logo {
+        margin: 2rem;
+        position: absolute;
+    }
+
+    .menu-mobile {
+        display: block;
+
+        position: fixed;
+        top: 2rem;
+        right: 2rem;
+    
+        width: 4rem;
+        height: 1rem;
+        border-radius: 999px;
+        background-color: #fff;
+        transition: all .2s;
+    
+        z-index: 999;
+    }
+    
+    .menu-mobile::before,
+    .menu-mobile::after {
+        all: inherit;
+        width: 4rem;
+        transition: all .5s;
+        content: "";
+    }
+    
+    .menu-mobile::before {
+        transform: translateY(150%);
+    }
+    
+    .menu-mobile::after {
+        transform: translateY(300%);
+    }
+    
+    #menu-mobile-checkbox:checked+label:after {
+        transform: translateY(100%) rotate(45deg);
+    }
+    
+    #menu-mobile-checkbox:checked+label::before {
+        transform: translateY(100%) rotate(-45deg);
+    }
+    
+    #menu-mobile-checkbox:checked+label {
+        width: 0px;
+    }
+    
+    
+    #menu-mobile-checkbox {
+        display: none;
+    }
+    
+    nav {
+        opacity: 0;
+        pointer-events: none;
+    
+        transition: all .5s;
+    }
+    
+    #menu-mobile-checkbox:checked~nav {
+        pointer-events: auto;
+        opacity: 1;
+        right: 0;
+    }
+    
+    #menu-mobile-checkbox:checked~nav ul {
+        pointer-events: auto;
+        opacity: 1;
+        right: 0;
+    }
+    
+    nav ul {
+        height: 100vh;
+        width: clamp(20rem, 50rem, 65vw);
+        position: fixed;
+        top: 0;
+        right: -100%;
+    
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 4rem;
+    
+        background-color: var(--clr-ul-bg);
+        font-weight: bold;
+    
+        z-index: 9;
+    
+        transition: all .5s;
+    }
 }
 
 .hero {
@@ -229,22 +275,63 @@ nav a {
     background-size: cover;
     background-position: center;
     background-color: var(--clr-bg-secondary);
+    background-attachment: fixed;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 #about p {
     text-shadow: 0 0 3px #000;
 }
 
-#experience {
+.about-icons {
+    flex-grow: 1;
     display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.about-icons svg {
+    /* display: none; */
+    opacity: 0;
+    width: 0;
+    fill: #fff;
+
+    transition: opacity 1s ease-in;
+}
+
+.about-icons .active {
+    /* display: block; */
+    opacity: 1;
+    width: 10rem;
+    height: 10rem;
+    margin: 2rem;
+}
+
+#experience {
+    /* display: flex;
     justify-content: center;
     flex-wrap: wrap;
 
+    gap: 2rem; */
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+    "text text"
+    "icons icons";
     gap: 2rem;
 }
 
 #experience p {
     margin: 1rem 0;
+}
+
+#experience .text-container {
+    grid-area: text;
 }
 
 #experience .skills-icons {
@@ -253,10 +340,16 @@ nav a {
     grid-template-rows: repeat(3, 1fr);
     gap: 1rem;
     place-items: center;
-
+    min-width: 25rem;
     max-width: 30rem;
+    grid-area: icons;
+    justify-self: center;
+}
 
-    flex-grow: 1;
+@media only screen and (min-width: 1000px) {
+    #experience {
+        grid-template-areas: "text icons";
+    }
 }
 
 #experience .skills-icons svg {
