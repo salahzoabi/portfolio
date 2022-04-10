@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sal - web developer</title>
     <link rel="stylesheet" href="./resources/css/style.css">
-    <script src="./resources/js/main.js" defer></script>
+    <script src="./resources/js/main.js" defer type="module"></script>
 </head>
 
 <body>
@@ -28,7 +28,7 @@
         </nav>
     </header>
     <main>
-        <section class="hero">
+        <section class="hero" aria-label="hero">
             <h1><span class="logo-s"><img src="./resources/images/logo/logo-s-white.png" alt=""></span><span
                     class="hero-name bold">alah,</span>
                 <span class="hero-name light">Web developer</span>
@@ -38,7 +38,7 @@
             <button class="btn-primary"><a href="#contact">Contact Me</a></button>
         </section>
 
-        <section id="about">
+        <section id="about" aria-label="about me">
             <div class="text-container">
                 <h2>About Me</h2>
                 <p>I am a Front-End developer located in Israel. I like to create dynamic and intuitive web experiences.
@@ -90,7 +90,7 @@
             </div>
         </section>
 
-        <section id="experience">
+        <section id="experience" aria-label="skills and experience">
             <div class="text-container">
                 <h2>Skills & Experience</h2>
                 <p>I create responsive websites that are dynamic, fast, and built with the best practices.</p>
@@ -157,18 +157,23 @@
             </div>
         </section>
 
-        <section id="portfolio">
+        <section id="portfolio" aria-label="portfolio">
             <h2>Portfolio</h2>
             <p>A short list of a few projects I have worked on.</p>
             <div class="projects-container">
-                <div class="project"></div>
-                <div class="project"></div>
-                <div class="project"></div>
-                <div class="project"></div>
+                <div class="project" data-carousel-active>
+                    <img src="https://images.unsplash.com/photo-1612828898780-c0b0c219e552?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974&q=80" alt="">
+                </div>
+                <div class="project">
+                    <img src="https://images.unsplash.com/photo-1471897488648-5eae4ac6686b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" alt="">
+                </div>
+                <div class="project">
+                    <img src="https://images.unsplash.com/photo-1649449445619-713c908b804c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=688&q=80" alt="">
+                </div>
             </div>
         </section>
 
-        <section id="contact">
+        <section id="contact" aria-label="contact">
             <h2>Contact Me</h2>
             <p>Ask me any questions you might have or just drop me a message to say hello :)</p>
 
