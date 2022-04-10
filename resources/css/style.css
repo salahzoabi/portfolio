@@ -115,7 +115,7 @@ header {
 }
 
 nav a {
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 
 .menu-mobile {
@@ -148,6 +148,10 @@ nav ul {
     .logo {
         margin: 2rem;
         position: absolute;
+    }
+
+    nav a {
+        font-size: 2rem;
     }
 
     .menu-mobile {
