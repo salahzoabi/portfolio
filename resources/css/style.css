@@ -42,7 +42,6 @@ a {
 
 p {
     font-size: 1.5rem;
-    /* width: clamp(20rem, 100%, 40rem); */
     max-width: 40rem;
 }
 
@@ -324,7 +323,6 @@ nav ul {
 }
 
 .about-icons .active {
-    /* display: block; */
     opacity: 1;
     width: 10rem;
     height: 10rem;
@@ -332,12 +330,6 @@ nav ul {
 }
 
 #experience {
-    /* display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-
-    gap: 2rem; */
-
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-areas: 
@@ -364,7 +356,6 @@ nav ul {
     max-width: 30rem;
     grid-area: icons;
     justify-self: center;
-    /* display: none; */
 }
 
 @media only screen and (max-width: 530px) {

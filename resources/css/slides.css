@@ -4,15 +4,14 @@
     height: 20rem;
 
     margin: 3rem;
-    /* box-shadow: 1rem 1rem 0px #ff96fb;; */
-    /* display: none; */
+    box-shadow: 1rem 1rem 0px #ff96fb;
 }
 
-/* @media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 1000px) {
     .slides-carousel {
-        width: 80vw;
+        margin: 3rem 0;
     }
-} */
+}
 
 .slides-carousel > div {
     position: absolute;
