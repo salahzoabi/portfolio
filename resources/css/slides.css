@@ -1,9 +1,18 @@
 .slides-carousel {
     position: relative;
-    /* min-width: 35rem; */
-    min-height: 35rem;
-    max-width: 80vw;
+    width: 20rem;
+    height: 20rem;
+
+    margin: 3rem;
+    /* box-shadow: 1rem 1rem 0px #ff96fb;; */
+    /* display: none; */
 }
+
+/* @media only screen and (max-width: 1000px) {
+    .slides-carousel {
+        width: 80vw;
+    }
+} */
 
 .slides-carousel > div {
     position: absolute;
@@ -22,10 +31,10 @@
 
 .slides-carousel .slides-next, .slides-carousel .slides-prev {
     position: absolute;
-    top: calc(50% - 4rem);
+    top: calc(50% - 2rem);
 
     background-color: rgba(15, 15, 15, 45%);
-    padding: 2rem;
+    padding: 1rem;
     color: #fff;
     font-weight: bold;
     font-size: 3rem;
@@ -50,21 +59,4 @@
 
 .slides-carousel > div[data-carousel-active] {
     opacity: 1;
-}
-
-.slides-carousel .dots-container {
-    all: unset;
-    position: absolute;
-    bottom: 0;
-    margin: 0 auto;
-}
-
-.slides-carousel .dots-container button {
-    cursor: pointer;
-    width: 2rem;
-    height: 2rem;
-    border-radius: 100%;
-    background-color: rgba(15, 15, 15, 85%);
-    border: none;
-    margin: 1rem;
 }

@@ -124,6 +124,7 @@ nav a {
 
 .menu-mobile {
     display: none;
+    background-color: #fff;
 }
 
 #menu-mobile-checkbox {
@@ -359,11 +360,19 @@ nav ul {
     max-width: 30rem;
     grid-area: icons;
     justify-self: center;
+    /* display: none; */
 }
 
-@media only screen and (min-width: 1000px) {
-    #experience {
-        grid-template-areas: "text icons";
+@media only screen and (max-width: 530px) {
+    #experience .skills-icons {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        min-width: unset;
+        gap: 2em;
+    }
+
+    #experience .skills-icons svg:last-child {
+        display: none;
     }
 }
 
@@ -374,6 +383,11 @@ nav ul {
 
 #portfolio {
     background-color: var(--clr-bg-secondary);
+    display: flex;
+    flex-wrap: wrap;
+
+    align-items: center;
+    justify-content: space-around;
 }
 
 #contact {
