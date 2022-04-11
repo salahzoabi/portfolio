@@ -145,6 +145,10 @@ nav ul {
 
 @media only screen and (max-width: 1000px) {
 
+    .logo {
+        display: none;
+    }
+
     header {
         all: unset;
         position: relative;
