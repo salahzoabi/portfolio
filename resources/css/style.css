@@ -357,7 +357,12 @@ nav ul {
     grid-area: icons;
     justify-self: center;
 }
-
+@media only screen and (min-width: 1350px) {
+    #experience {
+        grid-template-areas: 
+        "text icons"
+    }
+}
 @media only screen and (max-width: 530px) {
     #experience .skills-icons {
         grid-template-columns: repeat(2, 1fr);

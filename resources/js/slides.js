@@ -8,7 +8,6 @@ export default class Slides {
         const active = element.querySelector('[data-carousel-active]');
         this.currentSlide = active ? [...element.children].indexOf(active) : 0;
 
-        console.log(this.currentSlide);
         this.createHTML();
     }
 
